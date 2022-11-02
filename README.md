@@ -47,9 +47,9 @@ Bu yazılımı MIT Lisansı çerçevesinde kullanma, kopyalama, değiştirme, bi
 
 | İlgili kişi | E-posta | Telefon numarası |
 | --- | --- | --- |
-| D | D | D |
-| D | D | D |
-| D | D | D |
+| Melis UYANDIRICI | melisuyandirici@gmail.com | (+90) 507 076 89 16|
+| Ela Doğa AKPINAR | akpinareladoga@gmail.com | (+90) 544 571 80 24 |
+| Kenan Uğur DALDAL | kdaldal@zaferkoleji.com.tr | (+90) 552 935 98 48 |
 
 ## Bitiriş
 
@@ -107,9 +107,9 @@ You have the right to use, copy, modify, combine, publish, distribute, sublicens
 
 | Affiliated person | E-mail | Phone number |
 | --- | --- | --- |
-| D | D | D |
-| D | D | D |
-| D | D | D |
+| Melis UYANDIRICI | melisuyandirici@gmail.com | (+90) 507 076 89 16|
+| Ela Doğa AKPINAR | akpinareladoga@gmail.com | (+90) 544 571 80 24 |
+| Kenan Uğur DALDAL | kdaldal@zaferkoleji.com.tr | (+90) 552 935 98 48 |
 
 ## Conclusion
 
