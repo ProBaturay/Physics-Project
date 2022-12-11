@@ -3,6 +3,6 @@
     
     IMPORTANT NOTE: This script was written to contribute to a project within the framework of the competition of the TÜBİTAK institution (The Scientific and Technological Research Council of Türki̇ye) and comprises a kind of programming language with which project's simulation will be carried out. Should you see this writing please consult with the project's owners.
     
-    Oluşturulma Tarihi / Creation Date : UTC±D dd/mm/yyyy hr:min
+    Oluşturulma Tarihi / Creation Date : ±hh:mm dd/mm/yyyy hh:mm
     Yazar / Writer                     : @ProBaturay
 --]]
