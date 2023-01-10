@@ -1,0 +1,26 @@
+DataModel >
+    ReplicatedStorage >
+    |   Modules >
+    |   |   Lighting.lua
+    |   |   SimulateModel.lua >
+    |   |   |   StepInfo.lua
+    ------------------------------
+    ServerScriptService >
+    |   BackEnd.lua
+    |   FrontEnd.lua
+    ------------------------------
+    ServerStorage >
+    |   Utility.lua >
+    |   |   Debugging.lua
+    |   |   Logging.lua
+    |   |   RestrictedPromise.lua
+    |   |   Track.lua
+    ------------------------------
+    StarterPlayer >
+    |   StarterPlayerScripts >
+    |   |   ClientHandler.lua >
+    |   |   |   ContentLoading.lua
+    |   |   |   Perform.lua >
+    |   |   |   |   RefreshModel.lua
+    |   |   |   Topbar.lua
+    ------------------------------
