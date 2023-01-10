@@ -30,7 +30,7 @@ Simülasyonun tam ekran modunda deneyimlenmesi tavsiye edilir.
 
 ### Stüdyodan erişim
 
-1) <a href="https://www.roblox.com/create" target="_blank">Roblox Studio</a> indirmek için adrese tıklayın.
+1) [Roblox Studio](https://www.roblox.com/create) indirmek için adrese tıklayın.
 2) *Start Creating* düğmesine basıp stüdyoyu yükleyin. Sonra profil bilgilerinizle stüdyoya giriş yapın.
 3) Ardından oyunun adresine gidin.
 4) Sağ üst köşede bulunan üç noktaya tıklayıp *Download* yazan düğmeye basın.
