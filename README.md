@@ -18,7 +18,7 @@ Hesabınızı oluşturduktan sonra e-posta doğrulatma, telefon numarası ekleme
 
 Öncelikle bilgisayarınızda Roblox Player uygulamasının yüklü olup olmadığını kontrol edin.
 
-1) <a href="https://www.roblox.com/users/3927228248/profile" target="_blank">Bu adrese</a> gidin ve karşınıza çıkan sayfa yeşil oynama düğmesine tıklayın.
+1) <a href="https://www.roblox.com/games/11105019118" target="_blank">Bu adrese</a> gidin ve karşınıza çıkan sayfa yeşil oynama düğmesine tıklayın.
 
 Bu adımı uyguladıysanız ve Roblox Player uygulamasını bulamadıysanız aşağıdaki adımları izleyin.
 
@@ -78,7 +78,7 @@ After creating your account, you can edit side actions such as e-mail verificati
 
 First off, check if the Roblox Player application is installed on your computer.
 
-1) Navigate to <a href="https://www.roblox.com/users/3927228248/profile" target="_blank">this address</a> and click the green play button on the page that appears.
+1) Navigate to <a href="https://www.roblox.com/games/11105019118" target="_blank">this address</a> and click the green play button on the page that appears.
 
 If you followed this step and couldn't find the Roblox Player app, follow the steps below.
 
