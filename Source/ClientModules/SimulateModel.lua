@@ -511,7 +511,7 @@ function SetRoofState(state : boolean) : boolean
 		error("Please specify a state for the roof system.")
 	end
 
-	disableConstraints()
+	--disableConstraints()
 
 	if not state then
 		local tween = TweenService:Create(Narrower, TInfo_Narrower, {Position = Vector3.new(Narrower.Position.X, Narrower.Position.Y + ROOF_DESCENT_DISTANCE, Narrower.Position.Z)})
@@ -657,8 +657,8 @@ function steps:ExertAllFromTheBeginning(dimension : string)
 	functionsToApply[3]()
 	steps.simulationStep = 5
 	task.wait(20)
-	internalCamera.CameraSubject = ProjectFolder
 	steps.simulationStep = 0
+	internalCamera.CameraSubject = ProjectModel
 
 	return true
 end
