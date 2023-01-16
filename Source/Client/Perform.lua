@@ -18,8 +18,6 @@ local simulationEndingCall = false
 local allTweensFinished = false
 
 local startButtonText = "Bu düğmeye basarak ortadaki model ile simülasyonu en başından başlatıp en sonuna kadar bitirmiş olursunuz. Her bir simülasyon adımı için bilgiler verilecektir. Hava durumu, topraktaki nem oranı gibi özellikler..."
-local materialButtonText = "Bu düğmeye basarak proje için kullanılan malzemeleri inceleyebilirsiniz."
-
 local lastCoverText = ""
 
 local Players = game:GetService("Players")
@@ -58,7 +56,6 @@ local rightSubFrame = rightFrame:WaitForChild("Frame", WAITFORCHILD_TIMEOUT)
 
 local IndependentMovementZone = leftSubFrame:WaitForChild("IndependentMovementZone", WAITFORCHILD_TIMEOUT) :: Frame
 local StartButton = leftSubFrame:WaitForChild("Start", WAITFORCHILD_TIMEOUT) :: TextButton
-local MaterialsButton = leftSubFrame:WaitForChild("Materials", WAITFORCHILD_TIMEOUT) :: TextButton
 
 local properties = leftSubFrame:WaitForChild("Properties") :: Frame
 local properties_Awning = properties:WaitForChild("Awning") :: Frame
@@ -171,14 +168,12 @@ local function on2DReset()
 	rightScrollingFrame.Visible = false
 	properties.Visible = false
 	StartButton.Visible = true
-	MaterialsButton.Visible = true
 	CoverText.Visible = true
 end
 
 local function onSetup(conn1)
 	local c1_1 = StartButton.Activated:Connect(function()		
 		StartButton.Visible = false
-		MaterialsButton.Visible = false
 		CoverText.Visible = false
 		properties.Visible = true
 		
@@ -231,14 +226,6 @@ local function onSetup(conn1)
 	end)
 
 	local c1_3 = StartButton.MouseLeave:Connect(function()
-		CoverText.Text = ""
-	end)
-
-	local c4_2 = MaterialsButton.MouseEnter:Connect(function()
-		CoverText.Text = materialButtonText
-	end)
-
-	local c4_3 = MaterialsButton.MouseLeave:Connect(function()
 		CoverText.Text = ""
 	end)
 
@@ -418,24 +405,6 @@ function perform:StartEntireSimulation(dimension : "3D" | "2D")
 	else
 		lightingModule:SetGraphicsStatus(false)
 	end
-	
-	-- Experimental --
-	
-	--local isFinished = false
-	
-	--local thread = task.spawn(function()
-	--	isFinished = simulateModel:ExertAllFromTheBeginning(dimension)
-	--end)
-	
-	--while not simulationEndingCall and not isFinished do
-	--	task.wait()
-	--end
-	
-	--task.cancel(thread)
-	----
-	--if isFinished then
-	--	perform:EndEntireSimulation()
-	--end
 end
 
 function perform:EndEntireSimulation()
