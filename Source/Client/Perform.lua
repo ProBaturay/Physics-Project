@@ -238,7 +238,7 @@ local function onSetup(conn1)
 	c1_3:Disconnect()
 	c2_1:Disconnect()
 	
-	conn1:Disconnect()
+	--conn1:Disconnect()
 end
 
 function perform:Setup2D(dimension)
