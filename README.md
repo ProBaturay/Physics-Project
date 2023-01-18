@@ -1,4 +1,4 @@
-# Akıllı Sulama Projesi
+# Akıllı Tarım Sistemi Projesi
 
 Bu depo, TÜBİTAK (Türkiye Bilimsel ve Teknolojik Araştırma Kurumu) Lise Öğrencileri Araştırma Projeleri Yarışması kapsamında yapılan bir projenin simulasyonunu 2 ve 3 boyutlu ortamlarda göstermeyi hedefleyen kodları içeren bir açık kaynak deposudur. 
 
@@ -43,22 +43,9 @@ Simülasyonu oynatma esnasında hata ayıklama ve **log** çıkışlarını gör
 
 Bu yazılımı MIT Lisansı çerçevesinde kullanma, kopyalama, değiştirme, birleştirme, yayınlama, dağıtma, alt lisanslama ve/veya satma haklarına, bu telif hakkı bildirimi ve izin bildiriminin yazılımın tüm kopyaları içinde bulundurma dahilinde sahipsinizdir.
 
-## İletişim
-
-| İlgili kişi | E-posta | Telefon numarası |
-| --- | --- | --- |
-| Melis UYANDIRICI | melisuyandirici@gmail.com | (+90) 507 076 89 16|
-| Ela Doğa AKPINAR | akpinareladoga@gmail.com | (+90) 544 571 80 24 |
-| Kenan Uğur DALDAL | kdaldal@zaferkoleji.com.tr | (+90) 552 935 98 48 |
-
-## Bitiriş
-
-Simülasyonda programatik bir şekilde uygulanan adımların detaylı bir çizelgesi bu Git dosyasındadır.
-
-
 ---
 
-# Project Akıllı Sulama
+# Project Akıllı Tarım Sistemi
 
 This public repository was created under the circumstances of the competition held by TÜBİTAK (Scientific and Technological Research Council of Turkey) to shelter the scripts used to simulate the project in both the 2nd and 3rd dimensions. 
 
@@ -102,15 +89,3 @@ You will have the opportunity to see the debug and **log** outputs while playing
 ## Source Code License
 
 You have the right to use, copy, modify, combine, publish, distribute, sublicense, and/or sell this software under the MIT License, including in keeping this copyright notice and permission notice in all copies of the software.
-
-## Contact
-
-| Affiliated person | E-mail | Phone number |
-| --- | --- | --- |
-| Melis UYANDIRICI | melisuyandirici@gmail.com | (+90) 507 076 89 16|
-| Ela Doğa AKPINAR | akpinareladoga@gmail.com | (+90) 544 571 80 24 |
-| Kenan Uğur DALDAL | kdaldal@zaferkoleji.com.tr | (+90) 552 935 98 48 |
-
-## Conclusion
-
-A detailed chart of the steps implemented programmatically in the simulation is in this Git file.
