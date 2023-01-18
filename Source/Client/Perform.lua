@@ -297,7 +297,7 @@ function perform:Setup2D(dimension)
 					atmosphere.Density = 0.3
 					clouds.Cover = 0.7
 					clouds.Density = 0.8
-				elseif tween1.PlaybackState == Enum.PlaybackState.Completed or tween2.PlaybackState == Enum.PlaybackState.Completed then
+				elseif simulationEndingCall and (tween1.PlaybackState == Enum.PlaybackState.Completed or tween2.PlaybackState == Enum.PlaybackState.Completed) then
 					task.wait(2)
 
 					atmosphere.Density = 0.3
