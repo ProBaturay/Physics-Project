@@ -34,6 +34,10 @@ end
 local restrictedPromise = {}
 
 function restrictedPromise:ModifyDataStore(dataStore : DataStore, method : string, ...)
+	--| 1: datastore
+	--| 2: method "set" "update"
+	--| 3: player UserId
+	--| 4: dataToStore
 	if areDatastoresActive and AccessToDatastoreEnabled then
 		local packed = {...}
 		local success, err = nil, nil
@@ -70,6 +74,8 @@ function restrictedPromise:ModifyDataStore(dataStore : DataStore, method : strin
 			until success
 		end
 	end
+	
+	return true
 end
 
 return restrictedPromise
