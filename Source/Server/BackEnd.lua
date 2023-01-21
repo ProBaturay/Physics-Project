@@ -11,6 +11,7 @@
 
 local WAITFORCHILD_TIMEOUT = 100
 local SECURITY_KEY = "  ᠎‍ 	​    	  ​ ‌    　 ⁠    ⁠     ​ ⁠⁠　           ‌ ‌​ ​  　  ‌	          　 ᠎​           ᠎   	 ​⁠ ‍   ​​  ‍  　     ⁠ ‍  	   ​   ​  ‍    ⁠   ᠎   ᠎    ᠎​  ‌​  ‍     ​  ᠎    ᠎     　      ‌	​​     ‍  ‌‌ 	 ⁠ 　    	  	᠎ ‌‍　 	 ⁠  ‌ ​    ‌　      ᠎‌‍  ‍   	  ᠎‌᠎　‍      ‌᠎ ​   ⁠       	    　 ‌ ‍ 		    　        ‍       ᠎  ‌　᠎  	  ⁠‌   ᠎ ​　   ⁠    	    ᠎  　   ‍           ᠎ ‍ ‌         　 ‍    　    ​     ‍   ​     ⁠ 	          ⁠ ​  ⁠		      ⁠ ‍ ᠎    ⁠	  　    ‌​ ⁠     	     ᠎‌ 　        ᠎ 	  ‌   	‌ ‍ ‍‌     　  ‌        ‍  ​   ​      ​‌    ‌    	  ⁠   ⁠᠎  ‍  ᠎    ᠎ 	᠎     	       ‍  	 ‍⁠   ‍ 　​ 	   ⁠᠎  ‌ ​   　 ​ ᠎​　 	 ⁠  ​  ‍  　 ​        　  ​  　⁠     　    ‌        　​        	⁠‌᠎  ‍     ‍ ‍᠎    ​      ‌   ‍  ‌‌	 ‌​  ​​᠎᠎᠎    ⁠⁠   　               ‍  ​ ​    ​ ‍     ᠎‌　   ‍ ⁠⁠   ‌ ⁠    	  ‍ 	  	​      ⁠       ⁠⁠ ​ 　  ‍          ​ 	        ‍	 ‍  ​  	   ​     	  　     	       	  ᠎         　	  	  	    ‌  ‍  ᠎᠎  ⁠	 	         ᠎⁠ ​  ⁠    ‍　  　              ​      	　 ‍⁠  ⁠ ⁠ "
+local canShutdownServer = false
 
 local traceTypes = {
 	[1] = "ExploitAccessToServer",
@@ -56,8 +57,6 @@ local Utility = require(ServerStorage:WaitForChild("Utility", WAITFORCHILD_TIMEO
 local restrictedPromiseModule = Utility.RestrictedPromise()
 local trackModule = Utility.Track()
 
-local userIdsToStore = {}
-
 local datastoreOptions = Instance.new("DataStoreOptions")
 
 local dataStore_visitorData = DatastoreService:GetDataStore("VisitorData", nil, datastoreOptions)
@@ -95,41 +94,18 @@ coroutine.wrap(function()
 end)()
 
 ServerStorage:WaitForChild("PlayerJoined", 1000).Event:Connect(function(player)
-	table.insert(userIdsToStore, player.UserId)
+	
 end)
 
 ServerStorage:WaitForChild("PlayerLeft", 1000).Event:Connect(function(player)
-	local totalEncountered = {}
+	local totalEncountered = trackModule:ReturnSessionTracking()
 	
-	--for i, v in playerData[userId] do
-	--	if not next(totalEncountered[v], i) then
-			
-	--	end
-	--end
+	local result = restrictedPromiseModule:ModifyDataStore(dataStore_visitorData_encounteredBugs, "Update", player.UserId, totalEncountered)
 	
-	--restrictedPromiseModule:ModifyDataStore(dataStore_visitorData_encounteredBugs, "Update", player.UserId, {typeEquivalents["ExploitsAccessToServer"]})
-
-	if userIdsToStore[player.UserId] then
-		userIdsToStore[player.UserId] = nil
+	if result then
+		canShutdownServer = true
 	end
 end)
-
---local status, err = false, ""
-
---repeat
---	status, err = pcall(function()
---		dataStore_visitorData:GetAsync("STATUS")
---	end)
-	
---	if (not status and err ~= nil) and (string.find(err, "Cannot write to DataStore from studio if API access is not enabled") or string.find(err,  "Studio access to APIs is not allowed")) then
---		AccessToDatastoreEnabled = false
---		status = true
---	elseif status then
---		AccessToDatastoreEnabled = true
---		status = true
---		break
---	end
---until status
 
 TraceData.OnServerEvent:Connect(function(player, key : string, traceType : string)
 	local accessGranted1 = trackModule:Validate(player, {[1] = key == SECURITY_KEY, [2] = "ExploitsAccessToServer"})
@@ -138,6 +114,12 @@ TraceData.OnServerEvent:Connect(function(player, key : string, traceType : strin
 	if accessGranted1 and accessGranted2 then
 		trackModule:Validate(player, {[1] = true, [2] = traceType})
 	end
+end)
 
-	--restrictedPromiseModule:ModifyDataStore(dataStore_visitorData_encounteredBugs, "Update", player.UserId, {typeEquivalents["ExploitsAccessToServer"]})
+game:BindToClose(function()
+	repeat
+		task.wait()
+	until canShutdownServer
+	
+	return
 end)
