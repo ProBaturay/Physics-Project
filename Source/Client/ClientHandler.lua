@@ -62,13 +62,6 @@ local Lighting : Lighting = game:GetService("Lighting")
 
 local player : Player = Players.LocalPlayer :: Player
 
-coroutine.wrap(function()
-	local Values = ReplicatedStorage:WaitForChild("Values", WAITFORCHILD_TIMEOUT)
-	local ProjectName : StringValue = Values:WaitForChild("ProjectName", WAITFORCHILD_TIMEOUT) :: StringValue
-
-	player:WaitForChild("PlayerGui", WAITFORCHILD_TIMEOUT):WaitForChild("Beginning", WAITFORCHILD_TIMEOUT):WaitForChild("MainInfo", WAITFORCHILD_TIMEOUT):WaitForChild("Frame", WAITFORCHILD_TIMEOUT):WaitForChild("Frame", WAITFORCHILD_TIMEOUT):WaitForChild("ProjectName", WAITFORCHILD_TIMEOUT).Name = ProjectName.Value
-end)()
-
 local RemoteControls = ReplicatedStorage:WaitForChild("RemoteControls", WAITFORCHILD_TIMEOUT)
 local TraceData : RemoteEvent = RemoteControls:WaitForChild("TraceData", WAITFORCHILD_TIMEOUT) :: RemoteEvent
 
