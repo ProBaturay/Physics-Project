@@ -91,24 +91,24 @@ local function forPlayerAdded(player : Player) : any?
 		end
 	end)
 
-	--character:PivotTo(CFrame.new(11.3901119, 47.6095238, -223.265366, -0.336827934, 0.0186916813, -0.941380739, -0, 0.999803007, 0.0198516902, 0.941566229, 0.00668660365, -0.336761564))
+	character:PivotTo(CFrame.new(11.3901119, 47.6095238, -223.265366, -0.336827934, 0.0186916813, -0.941380739, -0, 0.999803007, 0.0198516902, 0.941566229, 0.00668660365, -0.336761564))
 
-	--local waypoints : {[number] : PathWaypoint}
+	local waypoints : {[number] : PathWaypoint}
 
-	--local success, err
+	local success, err
 
-	--repeat
-	--	success, err = pcall(function()
-	--		path:ComputeAsync(Vector3.new(11.3901119, 47.6095238, -223.265366), Vector3.new(195.741913, 50.2618484, -215.85817))
-	--	end)
-	--until success
+	repeat
+		success, err = pcall(function()
+			path:ComputeAsync(Vector3.new(11.3901119, 47.6095238, -223.265366), Vector3.new(195.741913, 50.2618484, -215.85817))
+		end)
+	until success
 
-	--waypoints = path:GetWaypoints()
+	waypoints = path:GetWaypoints()
 
-	--for i, v in waypoints do
-	--	Humanoid:MoveTo(v.Position)
-	--	Humanoid.MoveToFinished:Wait()
-	--end
+	for i, v in waypoints do
+		Humanoid:MoveTo(v.Position)
+		Humanoid.MoveToFinished:Wait()
+	end
 	
 	return
 end
