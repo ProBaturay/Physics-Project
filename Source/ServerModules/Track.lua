@@ -29,8 +29,6 @@ local typeEquivalents = {
 	["ContentLoadingExceededAllowedTime"] = "ContentProvider:PreloadAsync() işlevi izin verilen sürede kullanılamadı."
 }
 
-local restrictedPromise = require(script.Parent:WaitForChild("RestrictedPromise", 10))
-
 local metaTrackData = setmetatable({}, {
 	__index = function(tab, key)
 		if rawget(tab, key) then
@@ -64,6 +62,10 @@ function track:Validate<g1, g2>(targetUserId : number, tab : {[number] : g1 | g2
 	end
 	
 	return true
+end
+
+function track:ReturnSessionTracking() : typeof(setmetatable({}, {}))
+	return metaTrackData
 end
 
 return track
